@@ -1,0 +1,23 @@
+@import "../utility/utility.scss";
+
+.navBar {
+  position: sticky;
+  background: $beer-yellow;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  color: $black;
+  padding: 0 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: $default-font;
+
+  h1 {
+    flex-grow: 1;
+    white-space: nowrap;
+    margin-right: 15px;
+  }
+}

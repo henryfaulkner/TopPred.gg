@@ -1,0 +1,70 @@
+@import "../utility/utility.scss";
+
+.abCardCont {
+  background: $beer-brown;
+  overflow: hidden;
+  width: inherit;
+  border-radius: 0.6em;
+  margin: 1em;
+  cursor: pointer;
+  @include card-shadow();
+  transition: all ease 200ms;
+  text-align: center;
+  position: relative;
+
+  &:hover,
+  &:focus,
+  &:active {
+    transform: scale(1.1);
+  }
+
+  max-width: fit-content;
+}
+
+.abCardBody {
+  width: min-content;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h3 {
+    font-size: $font-size-extra-large;
+    margin: 0;
+    color: $white;
+    padding: 15px 20px;
+    white-space: nowrap;
+  }
+}
+
+.actionsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  button, a {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    font-size: $font-size-large;
+    border-radius: 0;
+    &:focus, &:hover {
+      outline: auto;
+    }
+  }
+}
+
+.delete {
+  background-color: $beer-red-link;
+}
+
+.procede {
+  background-color: $beer-yellow;
+}
+
+.addBracketCard {
+  font-size: xxx-large;
+  width: 60px;
+}

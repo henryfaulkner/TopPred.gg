@@ -1,0 +1,131 @@
+@import "../utility/utility.scss";
+
+.loginPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginModal {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+}
+
+.loginImageAligner {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.loginImage {
+  min-width: 200px;
+  min-height: 200px;
+  width: 200px;
+  height: 200px;
+
+  span {
+    border-radius: 100%;
+  }
+}
+
+$maxInputBoxHeight: 42px;
+
+.textBoxes {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 20px;
+
+  input[type="text"],
+  input[type="password"] {
+    max-height: $maxInputBoxHeight;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 3px #ddd;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+
+$maxWidthChildContainers: 375px;
+
+.emailInput {
+  max-width: $maxWidthChildContainers;
+  width: 100%;
+}
+
+.passwordBtnCont {
+  max-width: $maxWidthChildContainers;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin-top: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.passwordInput {
+  width: 100%;
+}
+
+.showPasswordBtn {
+  margin: 0;
+  margin-left: 10px;
+  padding: 0;
+  min-height: $maxInputBoxHeight;
+  min-width: $maxInputBoxHeight;
+  max-height: $maxInputBoxHeight;
+  max-width: $maxInputBoxHeight;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: $font-size-small;
+
+  &:hover {
+    color: $beer-yellow;
+  }
+}
+
+.openSVG {
+  width: $maxInputBoxHeight - 4;
+  height: $maxInputBoxHeight - 4;
+}
+
+.closedSVG {
+  width: $maxInputBoxHeight;
+  height: $maxInputBoxHeight;
+}
+
+.loginButtonContainer {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 20px;
+
+  button {
+    @include default-button-styles();
+  }
+}
+
+.hrLine {
+  width: 100%;
+  background-color: $black;
+}
+
+.createUserButton {
+  @include default-button-styles();
+  margin-left: 0;
+}

@@ -1,0 +1,33 @@
+@import "../utility/utility.scss";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+main {
+  padding: 15px 50px;
+  @include layout-for(mobile) {
+    padding: 16px;
+  }
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.image-container {
+  min-height: 200px;
+  min-width: 100px;
+  position: relative;
+}
+
+button {
+  @include default-button-styles();
+}
