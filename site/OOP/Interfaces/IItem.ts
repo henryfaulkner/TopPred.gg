@@ -1,11 +1,9 @@
-import ItemEffect from "../ItemEffect"
+import ItemEffect from "../Models/ItemEffect"
 
 interface IItem {
     Name: string;
-    Price: Number;
     Description: string;
     ItemEffectList: ItemEffect[]
-
 }
 
 export default IItem;
