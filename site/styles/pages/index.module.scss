@@ -1,0 +1,20 @@
+@import "../utility/utility.scss";
+
+.FadeInOne {
+	animation: fadeIn 3s;
+  	opacity: 1;
+}
+
+.FadeInTwo {
+	animation: fadeIn 6s;
+  	opacity: 1;
+}
+
+@keyframes fadeIn {
+  from {
+  	opacity: 0;
+  }
+  to {
+ 	opacity: 1;
+  }
+}
