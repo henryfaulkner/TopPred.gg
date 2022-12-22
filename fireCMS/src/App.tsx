@@ -29,15 +29,36 @@ const firebaseConfig = {
   };
 
 const itemEffectCollection = buildCollection<ItemEffect>({
-    path: "itemEffect",
+    path: "itemeffect",
     customId: "optional",
-    name: "ItemEffect",
-    singularName: "ItemEffect",
+    name: "Item Effects",
+    singularName: "Item Effect",
     properties: {
         DocumentID: {
             name: "DocumentID",
             validation: { required: true },
             dataType: "string"
+        }
+    }
+});
+
+const skillCollection = buildCollection<Skill>({
+    path: "skill",
+    customId: "optional",
+    name: "Skills",
+    singularName: "Skill",
+    properties: {
+        SkillKey: {
+            name: "SkillKey",
+            dataType: "number",
+            enumValues: {
+                Q: "1",
+                E: "2",
+                R: "3",
+                LeftClick: "4",
+                RightClick: "5",
+                LShift: "6"
+            }
         }
     }
 });
@@ -81,7 +102,7 @@ const crestsCollection = buildCollection<Crest>({
 
 const boughtItemsCollection = buildCollection<BoughtItem>({
     name: "Bought Items",
-    singularName: "BoughtItem",
+    singularName: "Bought Item",
     path: "boughtitem",
     permissions: ({ authController }) => ({
         edit: true,
@@ -125,6 +146,47 @@ const boughtItemsCollection = buildCollection<BoughtItem>({
     }
 });
 
+const championsCollection = buildCollection<Champion>({
+    name: "Champions",
+    singularName: "Champion",
+    path: "champion",
+    permissions: ({ authController }) => ({
+        edit: true,
+        create: true,
+        // we have created the roles object in the navigation builder
+        delete: false
+    }),
+    subcollections: [
+        skillCollection
+    ],
+    properties: {
+        Name: {
+            name: "Name",
+            validation: { required: true },
+            dataType: "string"
+        },
+        Image: buildProperty({ // The `buildProperty` method is a utility function used for type checking
+            name: "Image",
+            dataType: "string",
+            storage: {
+                storagePath: "images",
+                acceptedFiles: ["image/*"]
+            }
+        }),
+        Role: {
+            name: "Description",
+            description: "Champion's Role",
+            dataType: "number",
+            enumValues: {
+                Support: "1",
+                Carry: "2",
+                MidLane: "3",
+                Jungle: "4"
+            }
+        }
+    }
+});
+
 export default function App() {
 
     const myAuthenticator: Authenticator<FirebaseUser> = useCallback(async ({
@@ -147,7 +209,7 @@ export default function App() {
 
     return <FirebaseCMSApp
         name={"Top Predecessor CMS"}
-        collections={[crestsCollection, boughtItemsCollection]}
+        collections={[boughtItemsCollection, championsCollection, crestsCollection]}
         firebaseConfig={firebaseConfig}
     />;
 }
