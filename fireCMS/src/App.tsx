@@ -17,6 +17,7 @@ import BoughtItem from "../Types/BoughtItem";
 import Champion from "../Types/Champion";
 import Crest from "../Types/Crest";
 import ItemEffect from "../Types/ItemEffect";
+import * as cc from "./CollectionConstants";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDoDVjvART9USuiZvgecLfYjQSEoPLB_pU",
@@ -31,7 +32,7 @@ const firebaseConfig = {
 const itemEffectCollection = buildCollection<ItemEffect>({
     path: "itemeffect",
     customId: "optional",
-    name: "Item Effects",
+    name: cc.ItemEffects,
     singularName: "Item Effect",
     properties: {
         DocumentID: {
@@ -45,7 +46,7 @@ const itemEffectCollection = buildCollection<ItemEffect>({
 const skillCollection = buildCollection<Skill>({
     path: "skill",
     customId: "optional",
-    name: "Skills",
+    name: cc.BoughtItems,
     singularName: "Skill",
     properties: {
         SkillKey: {
@@ -64,7 +65,7 @@ const skillCollection = buildCollection<Skill>({
 });
 
 const crestsCollection = buildCollection<Crest>({
-    name: "Crest",
+    name: cc.Crests,
     singularName: "Crest",
     path: "crest",
     permissions: ({ authController }) => ({
@@ -101,7 +102,7 @@ const crestsCollection = buildCollection<Crest>({
 });
 
 const boughtItemsCollection = buildCollection<BoughtItem>({
-    name: "Bought Items",
+    name: cc.BoughtItems,
     singularName: "Bought Item",
     path: "boughtitem",
     permissions: ({ authController }) => ({
@@ -147,7 +148,7 @@ const boughtItemsCollection = buildCollection<BoughtItem>({
 });
 
 const championsCollection = buildCollection<Champion>({
-    name: "Champions",
+    name: cc.Champions,
     singularName: "Champion",
     path: "champion",
     permissions: ({ authController }) => ({
