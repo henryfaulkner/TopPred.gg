@@ -9,9 +9,12 @@ const Header = (props) => {
   const {user, username} = useContext(UserContext);
   return (
     <div className={styles.navBar}>
-      <Link href="/">
-        <h1 tabIndex={0}>Brewery Bracket</h1>
-      </Link>
+      <div className={styles.headerTitles}>
+        <Link href="/">
+          <h1 tabIndex={0}>Top Pred</h1>
+        </Link>
+      <h2>Top Predecessor Builds</h2>
+      </div>
       <OptionsAccordion
         options={[
           ["/", "Home"],

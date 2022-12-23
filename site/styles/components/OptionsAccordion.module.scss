@@ -26,16 +26,16 @@
   .mobileNav {
     width: 50px;
     height: 50px;
-    border: 3px solid $beer-brown;
+    border: 3px solid $blue;
     border-radius: 5px;
     padding: 0 5px;
 
     div {
       hr {
         width: 100%;
-        color: $beer-brown;
-        background-color: $beer-brown;
-        border: 1px solid $beer-brown;
+        color: $blue;
+        background-color: $blue;
+        border: 1px solid $blue;
         height: 4px;
       }
     }
@@ -57,11 +57,11 @@
 
       width: 100vw;
       border-radius: 5px;
-      background-color: $beer-yellow;
+      background-color: $green;
 
       a {
         padding: 15px 0;
-        border-bottom: 3px solid $beer-brown;
+        border-bottom: 3px solid $blue;
       }
     }
   }

@@ -14,7 +14,7 @@
 
 @mixin default-button-styles() {
     width: 175px;
-    background-color: $beer-brown;
+    background-color: $blue;
     border: none;
     color: $white;
     padding: 15px 32px;
@@ -31,7 +31,7 @@
 
 @mixin important-button-styles() {
     width: 175px;
-    background-color: $beer-red-link;
+    background-color: $off-white;
     border: none;
     color: $white;
     padding: 15px 32px;
@@ -71,11 +71,11 @@
     }
 
     &::-webkit-scrollbar-thumb {
-        background-color: $beer-brown;
+        background-color: $blue;
         /* color of the scroll thumb */
         border-radius: 20px;
         /* roundness of the scroll thumb */
-        border: 1px solid $beer-yellow;
+        border: 1px solid $green;
         /* creates padding around scroll thumb */
     }
 }

@@ -21,7 +21,7 @@ function OptionsAccordion(props: OptionArray) {
   let options = props.options.map((locationNamePair, key) => {
     return (
       <Link href={locationNamePair[0]} key={key}>
-        <a className={styles.optionsLink}>{locationNamePair[1]}</a>
+        <p className={styles.optionsLink}>{locationNamePair[1]}</p>
       </Link>
     );
   });
