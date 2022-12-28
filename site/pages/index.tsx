@@ -15,8 +15,8 @@ const Home = (props: Props) => {
     <>
       <main className={styles.main}>
         <div className={styles.description}>
-          <h1 className={styles.FadeInOne}>Calvin is a bitch</h1>
-          <h1 className={styles.FadeInTwo}>So is Andrew</h1>
+          {/* <h1 className={styles.FadeInOne}>Calvin is a bitch</h1>
+          <h1 className={styles.FadeInTwo}>So is Andrew</h1> */}
           <ChampionTypeAheadSearch 
                   inputReference={input_addBrewery}
                   AllChampions={props.AllChampions}
