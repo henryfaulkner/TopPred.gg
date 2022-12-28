@@ -46,12 +46,12 @@ const itemEffectCollection = buildCollection<ItemEffect>({
 const skillCollection = buildCollection<Skill>({
     path: "skill",
     customId: "optional",
-    name: cc.BoughtItems,
+    name: cc.Skills,
     singularName: "Skill",
     properties: {
         SkillKey: {
             name: "SkillKey",
-            dataType: "number",
+            dataType: "string",
             enumValues: {
                 Q: "1",
                 E: "2",
@@ -174,10 +174,15 @@ const championsCollection = buildCollection<Champion>({
                 acceptedFiles: ["image/*"]
             }
         }),
-        Role: {
+        Description: buildProperty({ // The `buildProperty` method is a utility function used for type checking
             name: "Description",
+            dataType: "string",
+            description: "Champion's Description",
+        }),
+        Role: {
+            name: "Role",
             description: "Champion's Role",
-            dataType: "number",
+            dataType: "string",
             enumValues: {
                 Support: "1",
                 Carry: "2",

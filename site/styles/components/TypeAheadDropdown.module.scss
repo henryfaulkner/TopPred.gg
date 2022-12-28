@@ -1,0 +1,61 @@
+@import "../utility/utility.scss";
+
+.dropdown {
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+
+.autocompleteList {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 300px 300px; 
+    column-gap: 10px;
+    row-gap: 15px;
+
+    max-height: 300px;
+    min-width: 200px;
+    padding: 0;
+    position: absolute;
+    top: 30px;
+    overflow: auto;
+
+    @include layout-for(mobile) {
+        min-width: 100%
+    }
+
+    &::-webkit-scrollbar {
+        width: 10px;
+        /* width of the entire scrollbar */
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+        /* color of the tracking area */
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $green;
+        /* color of the scroll thumb */
+        border-radius: 20px;
+        /* roundness of the scroll thumb */
+        border: 1px solid $blue;
+        /* creates padding around scroll thumb */
+    }
+
+    li {
+        list-style-type: none;
+        font-size: 2em;
+        padding: 3px;
+        margin: 0;
+        border: 1px black solid;
+        border-radius: $border-radius-default;
+        color: $white;
+        background-color: $green;
+        margin: 10px;
+        &:hover {
+            background-color: $blue;
+            cursor: pointer;
+        }
+    }
+}

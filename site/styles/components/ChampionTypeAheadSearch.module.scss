@@ -1,0 +1,40 @@
+@import "../utility/utility.scss";
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  position: relative;
+
+  @include layout-for(tablet) {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  input {
+    margin: auto;
+
+    @include layout-for(mobile) {
+      width: 100%;
+      height: 3.5em;
+      border: 2px solid black;
+      border-radius: $border-radius-default;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.btn {
+  width: unset; // Using flex grow for width
+  font-size: $font-size-small;
+  padding: 8px 16px;
+
+  &:hover {
+    @include box-shadow-hoverstate($green);
+  }
+}

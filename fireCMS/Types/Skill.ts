@@ -1,6 +1,6 @@
 // SubCollection of Champion
 type Skill = {
-    SkillKey: number; //SkillKey enum
+    SkillKey: string; //SkillKey enum
 }
 
 export default Skill;
