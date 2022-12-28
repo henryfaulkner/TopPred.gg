@@ -29,7 +29,7 @@ const Home = (props: Props) => {
 
 export async function getServerSideProps(context) {
   let AllChampions: Champion[] = [];
-  await fetch(`${server}/api/GetAllChampions`, {
+  await fetch(`https://top-pred.vercel.app/api/GetAllChampions`, {
     method: "GET",
     headers: {
       "Content-type": "application/json; charset=UTF-8",
