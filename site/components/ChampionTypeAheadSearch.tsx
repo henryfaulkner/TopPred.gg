@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/components/ChampionTypeAheadSearch.module.scss";
 import TypeAheadDropdown from "./TypeAheadDropdown";
 import Champion from "../OOP/Models/Champion";
@@ -8,14 +8,29 @@ type Props = {
   AllChampions: Champion[];
 };
 
-const searchLimit = 6;
+const searchLimit = 1000;
 let searchResultsOptions: JSX.Element[] = [];
 
 //refactor: Many similarities to UserSearchByUsername
 const ChampionTypeAheadSearch = (props: Props) => {
   const [searchText, setSearchText]: [string, any] = useState("");
-  const [dropdownState, setDropdownState] = useState({ display: "none", width: "100%" });
+  const [dropdownState, setDropdownState] = useState({ display: "grid", width: "100%" });
   const [currentBrewId, setCurrentBrewId] = useState("none");
+  useEffect(() => {
+    props.inputReference.current.focus();
+    searchResultsOptions = props.AllChampions.map((champion: Champion, key: number) => {
+      return <li 
+          key={key}
+          onClick={() => {
+            setSearchText(champion.Name);
+            setCurrentBrewId(champion.DocumentID);
+            controlAutocompleteOptions([]);
+          }}
+        >
+          {champion.Name}
+        </li>
+    });
+  }, props.AllChampions, props.inputReference);
 
   const typing = async (event) => {
     updateInputValue(event.target.value);
@@ -76,11 +91,11 @@ const ChampionTypeAheadSearch = (props: Props) => {
         onChange={(e) => typing(e)}
         autoComplete={"off"}
         onFocus={() => setDropdownState({ display: "grid", width: "100%" })}
-        onBlur={() => {
-          setTimeout(function () {
-            setDropdownState({ display: "none", width: "100%" });
-          }, 300);
-        }}
+        // onBlur={() => {
+        //   setTimeout(function () {
+        //     setDropdownState({ display: "none", width: "100%" });
+        //   }, 300);
+        // }}
         ref={props.inputReference}
       />
       <TypeAheadDropdown
