@@ -9,11 +9,11 @@
 .autocompleteList {
     display: grid;
     grid-template-columns: 30% 30% 30%;
-    grid-template-rows: 300px 300px; 
+    grid-template-rows: 200px 200px; 
     column-gap: 10px;
     row-gap: 15px;
 
-    max-height: 300px;
+    max-height: 600px;
     min-width: 200px;
     padding: 0;
     position: absolute;
