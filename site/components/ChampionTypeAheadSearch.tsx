@@ -30,7 +30,7 @@ const ChampionTypeAheadSearch = (props: Props) => {
           {champion.Name}
         </li>
     });
-  }, props.AllChampions, props.inputReference);
+  }, [props.AllChampions, props.inputReference]);
 
   const typing = async (event) => {
     updateInputValue(event.target.value);
