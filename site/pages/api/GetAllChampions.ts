@@ -4,12 +4,12 @@ import { firestore } from "../../lib/firebase";
 
 import Champion from "../../OOP/Models/Champion";
 import * as CollectionConstants from "../../OOP/CollectionConstants";
-//import Cors from 'cors';
-//import { runMiddleware } from "../../middleware";
+import Cors from 'cors';
+import { runMiddleware } from "./middleware";
 
-// const cors = Cors({
-//   methods: ['GET', 'HEAD'],
-// });
+const cors = Cors({
+  methods: ['GET', 'HEAD'],
+});
 
 /**
  * @swagger

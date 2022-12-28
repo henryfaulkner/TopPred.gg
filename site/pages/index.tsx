@@ -29,7 +29,6 @@ const Home = (props: Props) => {
 
 export async function getServerSideProps(context) {
   let AllChampions: Champion[] = [];
-  console.log("http://localhost:3000/api/GetAllChampions")
   await fetch(`${server}/api/GetAllChampions`, {
     method: "GET",
     headers: {
