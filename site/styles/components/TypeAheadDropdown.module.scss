@@ -22,7 +22,7 @@
 
     @include layout-for(mobile) {
         min-width: 100%;
-        grid-template-columns: 30% 30%;
+        grid-template-columns: 45% 45%;
     }
 
     &::-webkit-scrollbar {
